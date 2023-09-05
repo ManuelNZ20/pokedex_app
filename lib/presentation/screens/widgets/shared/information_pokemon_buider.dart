@@ -12,6 +12,7 @@ class InformationPokemonBuilder extends StatelessWidget {
     final colorThemeTitle =
         Theme.of(context).colorScheme.onSurface.withOpacity(.3);
     return StreamBuilder(
+      stream: Stream.empty(),
       initialData: pokemon,
       builder: (context, snapshot) {
         if (!snapshot.hasData) {

@@ -43,14 +43,16 @@ class PokemonDetailsScreenState extends ConsumerState<PokemonDetailsScreen> {
                   )
                 : const Icon(Icons.arrow_back_ios_new_rounded)),
         actions: [
-          IconButton(onPressed: (){
-            ref.read(themeProviderApp.notifier).toggleTheme();
-          }, icon: Icon(isDarkMode?Icons.light_mode_outlined:Icons.dark_mode_rounded))
+          IconButton(
+              onPressed: () {
+                ref.read(themeProviderApp.notifier).toggleTheme();
+              },
+              icon: Icon(isDarkMode
+                  ? Icons.light_mode_outlined
+                  : Icons.dark_mode_rounded))
         ],
       ),
-      body: SingleChildScrollView(
-        child: _DetailsPokemonView(pokemon: pokemon)),
-
+      body: SingleChildScrollView(child: _DetailsPokemonView(pokemon: pokemon)),
       bottomNavigationBar: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 12),
         child: FilledButton(
@@ -181,6 +183,7 @@ class _LoadingDetailsPokemon extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     StreamBuilder(
+                      stream: const Stream.empty(),
                       initialData: pokemon,
                       builder: (context, snapshot) {
                         if (!snapshot.hasData) {
@@ -192,6 +195,7 @@ class _LoadingDetailsPokemon extends StatelessWidget {
                       },
                     ),
                     StreamBuilder(
+                      stream: const Stream.empty(),
                       initialData: pokemon,
                       builder: (context, snapshot) {
                         if (!snapshot.hasData) {
@@ -219,6 +223,7 @@ class _LoadingDetailsPokemon extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     StreamBuilder(
+                      stream: const Stream.empty(),
                       initialData: pokemon,
                       builder: (context, snapshot) {
                         if (!snapshot.hasData) {
@@ -232,6 +237,7 @@ class _LoadingDetailsPokemon extends StatelessWidget {
                       },
                     ),
                     StreamBuilder(
+                      stream: const Stream.empty(),
                       initialData: pokemon,
                       builder: (context, snapshot) {
                         if (!snapshot.hasData) {
